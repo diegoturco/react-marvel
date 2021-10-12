@@ -2,17 +2,17 @@ import { StylesProvider, CardContent, Typography, CardActions } from '@material-
 import { PAGE_LIMIT } from '../utils/constants';
 import { Card, CardMedia, Grid } from './styled';
 import { useCharacters } from '../hooks/useCharacters';
-import { Paginate } from '../service/MarvelCharactersApiService';
+import { CharacterPagination } from '../types/Character';
 
 function Characters(): JSX.Element {
 
-  const paginate: Paginate = {
+  const pagination: CharacterPagination = {
     nameStartsWith: '',
     page: 0,
     limit: PAGE_LIMIT
   };
 
-  const characters = useCharacters(paginate);
+  const characters = useCharacters(pagination);
 
   return (
     <>

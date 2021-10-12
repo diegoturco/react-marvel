@@ -12,3 +12,8 @@ export interface Thumbnail {
   extension: string,
   path: string,
 }
+export interface CharacterPagination {
+  nameStartsWith: string,
+  page: number,
+  limit: number
+}

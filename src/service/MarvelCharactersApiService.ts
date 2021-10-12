@@ -1,13 +1,7 @@
-import { CharacterData } from '../types/Character';
+import { CharacterData, CharacterPagination } from '../types/Character';
 import { ROOT_MARVEL_API_URL } from '../utils/constants';
 
-export interface Paginate {
-  nameStartsWith: string,
-  page: number,
-  limit: number
-}
-
-const getCharactersList = ({ nameStartsWith, page = 0, limit = 20 } : Paginate): string => {
+const getCharactersList = ({ nameStartsWith, page = 0, limit = 20 } : CharacterPagination): string => {
   let nameParam = '';
 
   if (nameStartsWith) {
@@ -20,7 +14,7 @@ const getCharactersList = ({ nameStartsWith, page = 0, limit = 20 } : Paginate):
 };
 
 export class MarvelCharactersApiService {  
-  static getPaginated({ nameStartsWith, page, limit } : Paginate): Promise<CharacterData> {
+  static getPaginated({ nameStartsWith, page, limit } : CharacterPagination): Promise<CharacterData> {
     return fetch(getCharactersList({ nameStartsWith, page, limit }))
       .then((response) => response.json())
       .then((responseJson) => responseJson?.data);
