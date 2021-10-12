@@ -10,6 +10,12 @@ export const Card = styled(MuiCard)`
   padding: 4px
 `;
 
-export const CardMedia = styled(MuiCardMedia)<{ component: string, image: string, alt: string }>`  
+interface CardMediaProps {
+  readonly component: string, 
+  readonly image: string, 
+  readonly alt: string
+};
+
+export const CardMedia = styled(MuiCardMedia)<CardMediaProps>`  
   width: 245px
 `;
