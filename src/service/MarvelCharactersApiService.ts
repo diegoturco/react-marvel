@@ -1,4 +1,4 @@
-import { ROOT_MARVEL_API_URL } from "../utils/constants";
+import { ROOT_MARVEL_API_URL } from '../utils/constants';
 
 export interface Paginate {
   nameStartsWith: string,
@@ -19,7 +19,7 @@ const getCharactersList = ({ nameStartsWith, page = 0, limit = 20 } : Paginate) 
 };
 
 export class MarvelCharactersApiService {  
-  static getPaginated({nameStartsWith, page, limit} : Paginate) {
+  static getPaginated({ nameStartsWith, page, limit } : Paginate) {
     return fetch(getCharactersList({ nameStartsWith, page, limit }))
       .then((response) => response.json())
       .then((responseJson) => responseJson?.data);

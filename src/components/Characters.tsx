@@ -1,10 +1,10 @@
-import { StylesProvider, CardContent, Typography, CardActions } from "@material-ui/core";
-import { PAGE_LIMIT } from "../utils/constants";
-import { Card, CardMedia, Grid } from "./styled";
-import { useCharacters } from "../hooks/useCharacters";
-import { Paginate } from "../service/MarvelCharactersApiService";
+import { StylesProvider, CardContent, Typography, CardActions } from '@material-ui/core';
+import { PAGE_LIMIT } from '../utils/constants';
+import { Card, CardMedia, Grid } from './styled';
+import { useCharacters } from '../hooks/useCharacters';
+import { Paginate } from '../service/MarvelCharactersApiService';
 
-function Characters() {
+function Characters(): JSX.Element {
 
   const paginate: Paginate = {
     nameStartsWith: '',
