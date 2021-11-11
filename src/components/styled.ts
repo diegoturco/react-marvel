@@ -14,7 +14,7 @@ interface CardMediaProps {
   readonly component: string, 
   readonly image: string, 
   readonly alt: string
-};
+}
 
 export const CardMedia = styled(MuiCardMedia)<CardMediaProps>`  
   width: 245px
