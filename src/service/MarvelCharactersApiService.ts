@@ -1,5 +1,5 @@
 import { CharacterData, CharacterPagination } from '../types/Character';
-import { ROOT_MARVEL_API_URL } from '../utils/constants';
+import { ROOT_MARVEL_API_URL } from '../config/constants';
 
 const getCharactersList = ({ nameStartsWith, page = 0, limit = 20 } : CharacterPagination): string => {
   let nameParam = '';
@@ -13,10 +13,12 @@ const getCharactersList = ({ nameStartsWith, page = 0, limit = 20 } : CharacterP
   }&${nameParam}apikey=${process.env.REACT_APP_API_PUBLIC_KEY}`;
 };
 
-export class MarvelCharactersApiService {  
+class MarvelCharactersApiService {  
   static getPaginated({ nameStartsWith, page, limit } : CharacterPagination): Promise<CharacterData> {
     return fetch(getCharactersList({ nameStartsWith, page, limit }))
       .then((response) => response.json())
       .then((responseJson) => responseJson?.data);
   }
 }
+
+export default MarvelCharactersApiService;

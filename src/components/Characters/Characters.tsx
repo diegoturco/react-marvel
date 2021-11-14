@@ -1,8 +1,8 @@
 import { StylesProvider, CardContent, Typography, CardActions } from '@material-ui/core';
-import { PAGE_LIMIT } from '../utils/constants';
+import { PAGE_LIMIT } from '../../config/constants';
 import { Card, CardMedia, Grid } from './styled';
-import { useCharacters } from '../hooks/useCharacters';
-import { CharacterPagination } from '../types/Character';
+import { useCharacters } from '../../hooks';
+import { CharacterPagination } from '../../types/Character';
 
 function Characters(): JSX.Element {
 

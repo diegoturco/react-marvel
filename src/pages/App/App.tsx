@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
-import Characters from '../../components/Characters';
+import { Characters } from '../../components/Characters';
 
 const queryClient = new QueryClient();
 
