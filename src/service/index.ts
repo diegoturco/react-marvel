@@ -1,1 +1,1 @@
-export { default as MarvelCharactersApiService } from "./MarvelCharactersApiService";
+export { default as MarvelCharactersApiService } from './MarvelCharactersApiService';
